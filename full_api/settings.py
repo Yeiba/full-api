@@ -184,11 +184,12 @@ else:
     }
     AWS_DEFAULT_ACL = 'public-read'
     AWS_LOCATION = 'static'
+    AWS_MEDIA_LOCATION = 'media'
     AWS_S3_CUSTOM_DOMAIN = getenv('AWS_S3_CUSTOM_DOMAIN')
     STORAGES = {
 
-        'default': {'BACKEND': 'storages.backends.s3boto.S3BotoStorage'},
-        'staticfiles': {'BACKEND': 'storages.backends.s3boto.S3BotoStorage'}
+        'default': {'BACKEND': 'custom_storages.CustomS3BotoStorage'},
+        'staticfiles': {'BACKEND': 'storages.backends.s3boto3.S3BotoStorage'}
     }
 
 
